@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "baseUrl": ".",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "paths": {
+            "@ENV/*": [
+                "./src/env/*"
+            ],
+            "@Resources/*": [
+                "./src/data/*"
+            ],
+            "@Helper/*": [
+                "./src/helper/*"
+            ],
+            "@Services/*": [
+                "./src/services/*"
+            ],
+            "@Types/*": [
+                "./src/types/*"
+            ],
+            "@Schema/*": [
+                "./src/schema/*"
+            ],
+            "@Validation/*": [
+                "./src/validations/*"
+            ],
+            "@Static/*": [
+                "./src/static/*"
+            ]
+        }
+    },
+    "include": [
+        ".eslintrc.js",
+        "src/**/*.ts",
+        ".mocha.rp.js"
+    ]
+}

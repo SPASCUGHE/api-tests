@@ -1,0 +1,47 @@
+{
+  "name": "api_test_framework_using_supertest_typescript",
+  "version": "1.0.0",
+  "description": "testing rest api using supertest and typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "test:ci": "mocha --config .mocharc.ci.js",
+    "test:rp": "mocha --config .mocha.rp.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "postinstall": "husky || true"
+  },
+  "keywords": [
+    "API",
+    "Mocha",
+    "Supertest",
+    "TypeScript"
+  ],
+  "author": "MD SADAB SAQIB",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@reportportal/agent-js-mocha": "^5.0.4",
+    "@types/chai": "^4.3.1",
+    "@types/chai-json-schema": "^1.4.6",
+    "@types/mocha": "^9.1.1",
+    "@types/mochawesome": "^6.2.1",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "chai": "^4.3.6",
+    "chai-json-schema": "^1.5.1",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "mocha": "^9.2.2",
+    "mocha-junit-reporter": "^2.2.1",
+    "mocha-multi-reporters": "^1.5.1",
+    "mochawesome": "^7.1.3",
+    "npm-check-updates": "^16.14.17",
+    "supertest": "^6.2.3",
+    "ts-node": "^10.7.0",
+    "tsconfig-paths": "^3.14.1",
+    "typescript": "^4.9.5"
+  }
+}
