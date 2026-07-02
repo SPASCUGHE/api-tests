@@ -2,23 +2,22 @@ name: API Tests
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
   pull_request:
-    branches: [main]
+    branches: [main, master]
   workflow_dispatch:
 
 jobs:
   test:
+    timeout-minutes: 15
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: lts/*
           cache: npm
 
       - name: Install dependencies
@@ -29,9 +28,20 @@ jobs:
       - name: Run API tests
         run: npm test
 
-      - name: Upload Mochawesome report
-        if: always()
+      - name: Upload JUnit report for QA Results Hub
         uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        continue-on-error: true
+        with:
+          name: junit-results
+          path: reports/junit.xml
+          retention-days: 30
+
+      - name: Upload Mochawesome HTML report
+        uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        continue-on-error: true
         with:
           name: mochawesome-report
           path: report/
+          retention-days: 30
